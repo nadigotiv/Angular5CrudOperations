@@ -1,0 +1,44 @@
+<div style= "margin-left: 1000px">Welcome To &nbsp;<span style="color:red">{{LoggedUsername}}</span>
+</div>
+<div style= "margin-left: 1000px"><span><button class="btn btn-success" (click)="LogOut()">LogOut</button> </span>
+</div>
+<div style= "margin-right: 1000px"><span><button class="btn btn-success" (click)="AddNewRecord()">AddNewRecord</button> </span>
+</div>
+search With Name:<input [(ngModel)]="queryString" ><br>
+
+<table class="table table-bordered margin-top:50px">
+    <tr>
+       
+                <th style="display:none">Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>DOB</th>
+                <th>Qualification</th>
+                <th>Work</th>
+                <th>Salary</th>
+                <th>Phone</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+        
+    </tr>
+   <tr>
+       <td colspan="10" *ngIf="basicDetals.length==0">No Records Found</td>
+
+   </tr>
+      
+                <tr *ngFor="let x of basicDetals | searchData:'Name,Work':queryString:'name'">
+                        <td style="display:none">{{x.Id}}</td>
+                        <td>{{x.Name}}</td>
+                        <td>{{x.Age}}</td>
+                        <td>{{x.DOB}}</td>
+                        <td>{{x.Qualification}}</td>
+                        <td>{{x.Work}}</td>
+                        <td>{{x.Salary}}</td>
+                        <td>{{x.Phone}}</td>
+                        <td><button (click)="openDialog(x.Id,'Delete')" class="btn btn-delete">Delete</button></td>
+                        <td><button (click)="openDialog(x.Id,'Update')" class="btn btn-update">UpDate</button></td>
+                        </tr>
+       
+ 
+</table>
+

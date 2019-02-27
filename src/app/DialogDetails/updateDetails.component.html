@@ -1,0 +1,87 @@
+<div class=""> 
+        <h2 mat-dialog-title>Update Personal Information</h2>
+<mat-dialog-content >
+    
+            <table>   
+                    <!-- <tr>           
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>DOB</th>
+                            <th>Qualification</th>
+                            <th>Work</th>
+                            <th>Salary</th>
+                            <th>Phone</th>
+                    </tr>              -->
+                    <tr *ngFor="let record of SingleUserDetails">
+                        <table>
+                            <tr style="display:none"><td >ID</td><td><input type='text' [(ngModel)]=record.Id ></td></tr>
+                            <tr><td>Name</td><td><input type='text'  [(ngModel)]=record.Name ></td></tr>
+                            <tr><td>Age</td><td><input type='text'  [(ngModel)]=record.Age ></td></tr>
+                            <tr><td>DOB</td><td><input type='text'  [(ngModel)]=record.DOB ></td></tr>
+                            <tr><td>Qualification</td><td><input type='text'  [(ngModel)]=record.Qualification ></td></tr>
+                            <tr><td>Work</td><td><input type='text'  [(ngModel)]=record.Work ></td></tr>
+                            <tr><td>Salary</td><td><input type='text'  [(ngModel)]=record.Salary ></td></tr>
+                            <tr><td>Phone</td><td><input type='text'  [(ngModel)]=record.Phone ></td></tr>
+                        </table>
+                        
+                    <!-- <td><input type='text' readonly=readonly [(ngModel)]=record.Id ></td>
+                    <td><input type='text' [(ngModel)]=record.Name></td>
+                    <td><input type='text' [(ngModel)]=record.Age></td>
+                    <td><input type='text' [(ngModel)]=record.DOB></td>
+                    <td><input type='text' [(ngModel)]=record.Qualification></td>
+                    <td><input type='text' [(ngModel)]=record.Work></td>
+                    <td><input type='text' [(ngModel)]=record.Salary></td>
+                    <td><input type='text' [(ngModel)]=record.Phone></td> -->
+                    </tr>
+                    </table>
+    
+    <!-- <table >   
+        <tr>           
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>DOB</th>
+                <th>Qualification</th>
+                <th>Work</th>
+                <th>Salary</th>
+                <th>Phone</th>
+        </tr> 
+
+
+        <tr *ngFor="let record of SingleUserDetails">
+        <td><input type='text' readonly=readonly [(ngModel)]=record.Id ></td>
+        <td><input type='text' [(ngModel)]=record.Name></td>
+        <td><input type='text' [(ngModel)]=record.Age></td>
+        <td><input type='text' [(ngModel)]=record.DOB></td>
+        <td><input type='text' [(ngModel)]=record.Qualification></td>
+        <td><input type='text' [(ngModel)]=record.Work></td>
+        <td><input type='text' [(ngModel)]=record.Salary></td>
+        <td><input type='text' [(ngModel)]=record.Phone></td>
+        </tr>
+        </table> -->
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="Cancel()" class="btn btn-outline-warning">Cancel</button>
+  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+  <button mat-button (click)="Update()" class="btn btn-success">Save</button>
+</mat-dialog-actions>
+</div>
+<style>
+.mat-dialog-container {
+  position: fixed;
+  left: 20%;
+  top: 0%;
+  height:auto;
+  width: auto;
+  background-color:silver;
+  z-index: 1000
+}
+
+.cdk-overlay-container-overlay{
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    background-color: powderblue;
+}
+</style>

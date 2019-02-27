@@ -1,0 +1,80 @@
+<div style= "margin-right: 1000px"><span><h3 style="color:steelblue">Adding New Record</h3></span>
+</div>
+<div class="div">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+            <input smart-Text [Config]="text">
+    <div>
+        <label>Name</label>
+        <input type="text" id="Name"  formControlName="Name" >
+        <label *ngIf="myForm.get('Name').hasError('required')" class="alert alert-danger" [appShadow]="'hotpink'" [appShadowX]="'12px'" [appShadowY]="'6px'" [appShadowBlur]="'30px'" appShadow> Oops, please provide a name!</label>
+        <label *ngIf = "myForm.get('Name').hasError('minlength') && !myForm.get('Name').hasError('required')" class = "alert alert-danger" [appShadow]="'hotpink'" [appShadowX]="'12px'" [appShadowY]="'6px'" [appShadowBlur]="'30px'">User Name should  be minimum 4 lenthg</label>
+        <label *ngIf="myForm.get('Name').hasError('pattern')" class="alert alert-danger" [appShadow]="'hotpink'" [appShadowX]="'12px'" [appShadowY]="'6px'" [appShadowBlur]="'30px'"> Oops, please Enter a string!</label>
+        
+        <label >Age</label>
+        <input type="number" id="Age"  formControlName="Age" >
+        <label *ngIf="myForm.get('Age').hasError('required')" class="alert alert-danger" appShadow [appShadow]="'hotpink'" [appShadowX]="'12px'" [appShadowY]="'6px'" [appShadowBlur]="'30px'">Age Should Not be Blank</label>
+    </div>
+<br>
+<br>
+<br>
+    <div>
+            <label>DOB</label>
+            <input type="date" id="DOB"  formControlName="DOB">
+            <label *ngIf="myForm.get('DOB').hasError('required')" class="alert alert-danger" [appShadow]="'hotpink'" [appShadowX]="'12px'" [appShadowY]="'6px'" [appShadowBlur]="'30px'">DOB Should Not be Blank</label>
+            <label>&nbsp;</label>
+            <label>&nbsp;</label>
+            <label>&nbsp;</label>
+    
+            <label>Qualifi</label>
+            <input type="text" id="Qualifi"  formControlName="Qualification">
+            <label *ngIf="myForm.get('Qualification').hasError('required')" class="alert alert-danger" [appShadow]="'hotpink'" [appShadowX]="'12px'" [appShadowY]="'6px'" [appShadowBlur]="'30px'">Qualification Should Not be Blank</label>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+        <div>
+                <label>Work</label>
+                <input type="text" id="Work"  formControlName="Work">
+                <label *ngIf="myForm.get('Work').hasError('required')" class="alert alert-danger" [appShadow]="'hotpink'" [appShadowX]="'12px'" [appShadowY]="'6px'" [appShadowBlur]="'30px'">Work Should Not be Blank</label>
+                <label>&nbsp;</label>
+                <label>&nbsp;</label>
+                <label>&nbsp;</label>
+        
+                <label>Salary</label>
+                <input type="number" id="Salary"  formControlName="Salary">
+                <label *ngIf="myForm.get('Salary').hasError('required')" class="alert alert-danger" [appShadow]="'hotpink'" [appShadowX]="'12px'" [appShadowY]="'6px'" [appShadowBlur]="'30px'">Salary Should Not be Blank</label>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div>
+                    <label>Phone</label>
+                    <input type="text" id="Phone"  formControlName="Phone"  >
+                    <label *ngIf="myForm.get('Phone').hasError('required')" class="alert alert-danger" [appShadow]="'hotpink'" [appShadowX]="'12px'" [appShadowY]="'6px'" [appShadowBlur]="'30px'">Phone Should Not be Blank</label>
+                    <label *ngIf="myForm.get('Phone').hasError('minlength') && !myForm.get('Phone').hasError('required')" class="alert alert-danger" [appShadow]="'hotpink'" [appShadowX]="'12px'" [appShadowY]="'6px'" [appShadowBlur]="'30px'">Phone Should be 10 digits</label>
+                    <label *ngIf="myForm.get('Phone').hasError('pattern') && !myForm.get('Phone').hasError('required')" class="alert alert-danger" [appShadow]="'hotpink'" [appShadowX]="'12px'" [appShadowY]="'6px'" [appShadowBlur]="'30px'">Phone Should Be Number Only</label>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div>
+                        <button class="btn btn-sucess" [disabled]="!myForm.valid"  type="submit" [appShadow]="'hotpink'" [appShadowX]="'12px'" [appShadowY]="'6px'" [appShadowBlur]="'30px'">Submit</button>
+                         <label>&nbsp;</label>
+                         <button class="btn btn-warning" (click)="GoBack()" [appShadow]="'hotpink'" [appShadowX]="'12px'" [appShadowY]="'6px'" [appShadowBlur]="'30px'">GoBack</button>
+                         <label>&nbsp;</label>
+                         <label>&nbsp;</label>
+                        
+                       </div>
+
+    </form>
+</div>
+<style>
+        .div {
+border-style: solid;
+border-color: coral;
+}
+        </style>
+
+              

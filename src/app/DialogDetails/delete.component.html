@@ -1,0 +1,23 @@
+<div > 
+        
+<mat-dialog-content >
+    Are You Sure ,You want To delete this Record?
+    </mat-dialog-content>
+    <mat-dialog-actions>
+            <button mat-button (click)="Yes()"  class="btn btn-success">Yes</button>
+            <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+            <button mat-button (click)="No()" class="btn btn-outline-warning">No</button>
+          </mat-dialog-actions>
+          </div>
+
+          <style>
+                .mat-dialog-container {
+                  position: fixed;
+                  left: 20%;
+                  top: 0%;
+                  height:auto;
+                  width: auto;
+                  background-color:silver;
+                  z-index: 1000
+                }
+                </style>

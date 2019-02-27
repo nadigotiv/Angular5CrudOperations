@@ -1,0 +1,24 @@
+<div style="margin-right:50% ;margin-left:50px; margin-top: 50px">
+<form #refform>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address/UserName</label>
+          
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="userDetails.UserName" name="UserName"  #username>
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" [(ngModel)]="userDetails.Password" name="password" >
+        </div>
+        <div>
+          <Span *ngIf="this.AppConstant.userdetail===null">
+            <p style="color:green">Invalid Credential</p>
+          </Span>
+          <Span *ngIf="validate!=null" >
+            <p style="color:green">{{validate}}</p>
+          </Span>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="validateUser()">Submit</button>
+      </form>
+
+    </div>
